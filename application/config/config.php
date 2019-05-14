@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost/counter_hp/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ $config['uri_protocol']	= 'REQUEST_URI';
 |
 | https://codeigniter.com/user_guide/general/urls.html
 */
-$config['url_suffix'] = '';
+$config['url_suffix'] = '.html';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = hex2bin('f114134ca1460703584977d5bce61074a28cb27eb1530b6c045ae8fe74e51726f956948b159ab47db73dc85d108dcf4f62d8c3115c1a939ebca7ad432bb5dcf8fde86b13723a6c76ff226a6250cc94ab4828d5f57f8c485ad6002b17d27db9c661473998');
 
 /*
 |--------------------------------------------------------------------------
