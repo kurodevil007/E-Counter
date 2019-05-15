@@ -146,6 +146,13 @@ desired effect
 <script src="<?php echo base_url('assets/'); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Datatables.net -->
 <script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/buttons.flash.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/buttons.html5.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/buttons.print.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/jszip.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/pdfmake.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net/button/vfs_fonts.js"></script>
 <!-- Datatables.net-bs -->
 <script src="<?php echo base_url('assets/'); ?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- Datepicker -->
@@ -163,7 +170,11 @@ $("#table-nomor").DataTable({
 		        "url": '<?php echo base_url('main/get_nomor') ?>',
 		        "type": "POST",
 		        "dataSrc": 'data' 
-		    }
+		    },
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
 });
 $("#table-pulsa").DataTable({
   "processing": true,
@@ -172,7 +183,11 @@ $("#table-pulsa").DataTable({
 		        "url": '<?php echo base_url('main/get_pulsa') ?>',
 		        "type": "POST",
 		        "dataSrc": 'data' 
-		    }
+		    },
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
 });
 $('#datepicker_nomor').datepicker({
       format: 'dd-mm-yyyy'
