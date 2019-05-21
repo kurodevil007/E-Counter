@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 09:31 AM
+-- Generation Time: May 21, 2019 at 07:44 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -32,18 +32,11 @@ CREATE TABLE `nomor` (
   `provider` varchar(64) NOT NULL,
   `kuota` int(11) NOT NULL,
   `pulsa` int(11) NOT NULL,
-  `tgl_beli` varchar(12) NOT NULL,
-  `masa_aktif` int(11) NOT NULL,
+  `tgl_beli` varchar(32) NOT NULL,
+  `masa_aktif` varchar(32) NOT NULL,
   `harga` int(11) NOT NULL,
-  `date` varchar(11) NOT NULL
+  `date` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `nomor`
---
-
-INSERT INTO `nomor` (`id`, `nomor`, `provider`, `kuota`, `pulsa`, `tgl_beli`, `masa_aktif`, `harga`, `date`) VALUES
-(1, '083816265574', 'Axis', 0, 5000, '13-05-2019', 10000, 10000, '13-05-2019');
 
 -- --------------------------------------------------------
 
@@ -56,15 +49,8 @@ CREATE TABLE `pulsa` (
   `nomor` varchar(13) NOT NULL,
   `provider` varchar(64) NOT NULL,
   `jml_pulsa` varchar(64) NOT NULL,
-  `date` varchar(10) NOT NULL
+  `date` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pulsa`
---
-
-INSERT INTO `pulsa` (`id`, `nomor`, `provider`, `jml_pulsa`, `date`) VALUES
-(1, '083816265574', 'Axis', 'Rp. 5.000', '13-05-2019');
 
 --
 -- Indexes for dumped tables
@@ -90,12 +76,12 @@ ALTER TABLE `pulsa`
 -- AUTO_INCREMENT for table `nomor`
 --
 ALTER TABLE `nomor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pulsa`
 --
 ALTER TABLE `pulsa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

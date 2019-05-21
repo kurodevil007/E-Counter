@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Carbon\Carbon;
 class Main extends CI_Controller {
 
     public function __construct()
@@ -42,10 +43,10 @@ class Main extends CI_Controller {
                     'provider' => $this->input->post('provider', true),
                     'kuota' => $this->input->post('kuota', true),
                     'pulsa' => $this->input->post('pulsa', true),
-                    'tgl_beli' => date('d-m-Y'),
+                    'tgl_beli' => Carbon::now('Asia/Jakarta')->format('d M Y'),
                     'harga' => $this->input->post('harga', true),
-                    'masa_aktif' => $this->input->post('harga', true),
-                    'date' => date('d-m-Y')
+                    'masa_aktif' => $this->input->post('masa_aktif', true),
+                    'date' => Carbon::now('Asia/Jakarta')->format('d M Y')
                 ];
                 $hasil = $this->crud->input_kartu($data);
                 $hasil = json_decode($hasil);
@@ -56,7 +57,7 @@ class Main extends CI_Controller {
                     'nomor' => $this->input->post('nomor', true),
                     'provider' => $this->input->post('provider', true),
                     'jml_pulsa' => $this->input->post('jml_pulsa', true),
-                    'date' => date('d-m-Y')
+                    'date' => Carbon::now('Asia/Jakarta')->format('d M Y')
                 ];
                 $hasil = $this->crud->input_pulsa($data);
                 $hasil = json_decode($hasil);
@@ -95,5 +96,10 @@ class Main extends CI_Controller {
     public function get_pulsa()
     {
         echo $this->crud->get_pulsa();
+    }
+
+    public function edit_nomor($id)
+    {
+        echo $this->crud->edit_nomor($id);
     }
 }

@@ -4,7 +4,12 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="box box-warning">
-                <div class="box-body">
+                <div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="remove"><i
+								class="fa fa-close"></i>
+						</button>
+					</div>
+				<div class="box-body">
 				<?php echo $this->session->flashdata('msg'); ?>
                 </div>
 			</div>
@@ -16,7 +21,7 @@
 		<div class="col-md-6">
 			<div class="box box-success">
 				<div class="box-header with-border">
-					<h3 class="box-title">Tambah Nomor HP</h3>
+					<h3 class="box-title">Data Kartu</h3>
 					<div class="box-tools pull-right">
 						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
 								class="fa fa-minus"></i>
@@ -28,7 +33,7 @@
 					<?php echo form_open('main') ?>
 					<div class="form-group">
 						<label for="nomor">Nomor</label>
-						<input type="text" class="form-control" name="nomor">
+						<input type="text" class="form-control" name="nomor" autocomplete="off">
 						<?php echo form_error('nomor'); ?>
 					</div>
 					<div class="form-group">
@@ -44,28 +49,28 @@
 					</div>
 					<div class="form-group">
 						<label for="kuota">Kuota (GB)</label>
-						<input type="text" class="form-control" name="kuota">
+						<input type="text" class="form-control" name="kuota" autocomplete="off">
 						<?php echo form_error('kuota'); ?>
 					</div>
 					<div class="form-group">
 						<label for="pulsa">Pulsa</label>
-						<input type="text" class="form-control" name="pulsa">
+						<input type="text" class="form-control" name="pulsa" autocomplete="off">
 						<?php echo form_error('pulsa'); ?>
 					</div>
 					<div class="form-group">
 						<label for="harga">Harga</label>
-						<input type="text" class="form-control" name="harga">
+						<input type="text" class="form-control" name="harga" autocomplete="off">
 						<?php echo form_error('harga'); ?>
 					</div>
 
 					<div class="form-group">
 						<label for="masa_aktif">Masa Aktif</label>
-						<input type="text" class="form-control" id="datepicker_nomor" name="masa_aktif">
+						<input type="text" class="form-control" id="datepicker_nomor" name="masa_aktif" autocomplete="off">
 						<?php echo form_error('masa_aktif'); ?>
 					</div>
 					<div class="form-group">
 						<label for="registrasi">Registrasi Kartu</label>
-						<input type="text" class="form-control" disabled value="<?php echo date('d-m-Y') ?>">
+						<input type="text" class="form-control" disabled value="<?php echo date('d M Y') ?>">
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-flat btn-primary">Tambah</button>
@@ -90,7 +95,7 @@
 					<?php echo form_open('main/') ?>
 					<div class="form-group">
 						<label for="nomor">Nomor</label>
-						<input type="text" class="form-control" name="nomor">
+						<input type="text" class="form-control" name="nomor" autocomplete="off">
 						<?php echo form_error('nomor'); ?>
 					</div>
 					<div class="form-group">
@@ -106,7 +111,7 @@
 					</div>
 					<div class="form-group">
 						<label>Nominal</label>
-						<select class="form-control select2" style="width: 100%;" name="jml_pulsa">
+						<select class="form-control select2" style="width: 100%;" name="jml_pulsa" autocomplete="off">
 							<option selected="selected">Rp. 5.000</option>
 							<option>Rp. 10.000</option>
 							<option>Rp. 20.000</option>
@@ -116,7 +121,7 @@
 					</div>
 					<div class="form-group">
 						<label for="Tanggal Isi Pulsa">Tanggal Isi Pulsa</label>
-						<input type="text" class="form-control" disabled value="<?php echo date('d-m-Y') ?>">
+						<input type="text" class="form-control" disabled value="<?php echo date('d M Y') ?>">
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-flat btn-primary">Tambah</button>

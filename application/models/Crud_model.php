@@ -14,7 +14,7 @@ class Crud_Model extends CI_Model {
 		$this->datatables->select('harga');
 		$this->datatables->select('tgl_beli');
         $this->datatables->from('nomor');
-    //    $this->datatables->add_column('Edit', '<a href="'.base_url("/main/hapus_nomor/$1").'" class="btn btn-primary btn-sm btn-block" id="$1">Edit</>', 'nomor');
+        // $this->datatables->add_column('Edit', '<button class="btn btn-primary btn-sm btn-block edit_data" id="$1">Edit</button>', 'nomor');
 		return $this->datatables->generate();
     }
 
@@ -67,5 +67,23 @@ class Crud_Model extends CI_Model {
             ];
         }
         return json_encode($msg);        
+    }
+
+    public function edit_nomor($id)
+    {
+        $q = $this->db->query('SELECT * FROM nomor WHERE nomor = ?', $id)->result_array();
+        // var_dump($q);die;
+        if ($q) {
+            $data = [
+                'nomor' => $q[0]['nomor'],
+                'provider' => $q[0]['provider'],
+                'kuota' => $q[0]['kuota'],
+                'pulsa' => $q[0]['pulsa'],
+                'tgl_beli' => $q[0]['tgl_beli'],
+                'masa_aktif' => $q[0]['masa_aktif'],
+                'harga' => $q[0]['harga']
+            ];
+            return json_encode($data);
+        }
     }
 }

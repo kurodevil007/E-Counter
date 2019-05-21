@@ -13,7 +13,7 @@
 			<div class="box-body">
 				<div class="row">
 					<div class="col-md-12">
-						<table id="table-nomor" class="table table-bordered table-hover">
+						<table id="table-nomor" class="table table-bordered table-hover" width="100%">
 							<thead>
               <tr>
 								<th>Nomor</th>
